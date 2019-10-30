@@ -6,7 +6,6 @@ spring:
 server:
   port: 8081
 
-
 spring:
   profiles: dev
   application:
@@ -14,7 +13,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource              #当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              #mysql驱动包
-    url: jdbc:mysql://localhost:3306/clouddb01                #数据库名称
+    url: jdbc:mysql://localhost:3306/clouddb01?serverTimezone=UTC                #数据库名称
     username: root
     password: 940402
     dbcp2:
@@ -29,7 +28,7 @@ eureka:
       #集群
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
-    instance-id: microservicecloud-dept8001 #在eureka内的Status的链接名
+    instance-id: microservicecloud-dept8081 #在eureka内的Status的链接名
     prefer-ip-address: true #显示IP
 info:   #这里是进入eureka里面单击服务连接进入的页面配置
   app.name: dbqn-microservicecloud
@@ -40,6 +39,7 @@ info:   #这里是进入eureka里面单击服务连接进入的页面配置
 ---
 server:
   port: 8081
+
 spring:
   profiles: test
   application:
@@ -47,7 +47,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource              #当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              #mysql驱动包
-    url: jdbc:mysql://localhost:3306/clouddb02               #数据库名称
+    url: jdbc:mysql://localhost:3306/clouddb02?serverTimezone=UTC               #数据库名称
     username: root
     password: 940402
     dbcp2:
@@ -62,7 +62,7 @@ eureka:
       #集群
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
   instance:
-    instance-id: microservicecloud-dept8001 #在eureka内的Status的链接名
+    instance-id: microservicecloud-dept8081 #在eureka内的Status的链接名
     prefer-ip-address: true #显示IP
 info:   #这里是进入eureka里面单击服务连接进入的页面配置
   app.name: dbqn-microservicecloud
